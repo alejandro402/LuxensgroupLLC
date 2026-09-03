@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxensgroup LX | Ultra-Exclusive Private Concierge</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/c5b3mb9/Luxen-Group-3.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black: '#000000',
+                        surface: '#0A0A0A',
+                        platinum: '#E5E5E5'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555555;
+        }
+
+        #mobile-menu {
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 350px;
+            opacity: 1;
+        }
+
+        .nav-link-hover {
+            position: relative;
+            transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, transparent, #FFFFFF, transparent);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-link-hover:hover {
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            letter-spacing: 0.18em;
+        }
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+
+        .private-access-btn {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .private-access-btn:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+            border-color: #FFFFFF;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px) scale(1.02);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden pt-[110px] md:pt-[120px]">
+
+    <div class="fixed top-0 w-full z-50 bg-black border-b border-white/10 px-4 py-2 flex justify-center items-center">
+        <p class="text-[9px] md:text-[10px] text-platinum tracking-[0.25em] uppercase text-center font-light">
+            100% Human & Personalized Support &bull; No bots or automation &bull; Dedicated 24/7 Concierge
+        </p>
+    </div>
+
+    <nav class="fixed top-[32px] md:top-[36px] w-full z-40 bg-black/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex justify-between items-center relative">
+            
+            <a href="#" class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center">
+                <img src="https://i.ibb.co/c5b3mb9/Luxen-Group-3.jpg" alt="Luxensgroup LX Logo" class="h-16 md:h-14 w-auto object-contain" onerror="this.onerror=null; this.src='https://i.ibb.co/c5b3mb9/Luxen-Group-3.jpg';">
+            </a>
+
+            <div class="hidden md:flex space-x-12 items-center">
+                <a href="#servicios" class="nav-link-hover text-[11px] text-platinum tracking-[0.15em] uppercase">Portfolio</a>
+                <a href="#paises" class="nav-link-hover text-[11px] text-platinum tracking-[0.15em] uppercase">Destinations</a>
+                <a href="#filosofia" class="nav-link-hover text-[11px] text-platinum tracking-[0.15em] uppercase">Philosophy</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="#" class="chat-general-btn private-access-btn inline-block border border-white/20 text-white text-[9px] tracking-[0.2em] uppercase py-1.5 px-4 rounded-full">
+                    Private Access
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-2 z-10 ml-auto">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden bg-black/95 border-b border-white/10 px-6 flex flex-col items-center space-y-6 shadow-2xl w-full">
+            <div class="w-full pt-4 pb-6 flex flex-col items-center space-y-5 border-t border-white/5">
+                <a href="#servicios" class="mobile-link text-xs text-platinum hover:text-white tracking-[0.2em] uppercase transition-colors">Portfolio</a>
+                <a href="#paises" class="mobile-link text-xs text-platinum hover:text-white tracking-[0.2em] uppercase transition-colors">Destinations</a>
+                <a href="#filosofia" class="mobile-link text-xs text-platinum hover:text-white tracking-[0.2em] uppercase transition-colors">Philosophy</a>
+                <a href="#" class="chat-general-btn private-access-btn inline-block border border-white/20 text-white text-[9px] tracking-[0.2em] uppercase py-1.5 px-4 rounded-full mt-2">
+                    Private Access
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-12 pb-20">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface/50 via-black to-black -z-10"></div>
+        
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 font-light">
+                The architecture of <i class="text-white/80">uncompromising luxury</i>,<br />curated for the elite.
+            </h1>
+            
+            <p class="text-platinum text-sm md:text-base font-light max-w-2xl leading-relaxed mb-12 tracking-wide">
+                Bespoke private estates, private aviation, luxury yacht charters, and bulletproof executive transport. We orchestrate peerless travel experiences with absolute discretion and personalized human mastery from your very first word.
+            </p>
+            
+            <a href="#" class="chat-general-btn group relative inline-flex items-center justify-center bg-white text-black text-xs tracking-[0.2em] uppercase py-5 px-10 overflow-hidden font-medium transition-all duration-500 ease-out hover:bg-platinum hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 active:translate-y-0 active:scale-[0.98]">
+                <span class="absolute inset-0 w-full h-full -mt-1 opacity-30 bg-gradient-to-b from-transparent via-transparent to-black transition-opacity duration-500 group-hover:opacity-0"></span>
+                <span class="relative">Initiate Private Concierge</span>
+            </a>
+
+            <div class="mt-8 flex items-center space-x-3 text-xs text-platinum tracking-widest uppercase opacity-80">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span>Senior concierge available for consultation</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 bg-black">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <!-- Portfolio Heading Image (Large & Complete) -->
+            <div class="flex justify-center mb-6 px-4">
+                <img src="https://i.ibb.co/c5b3mb9/Luxen-Group-3.jpg" alt="Luxen Group" class="w-full max-w-4xl h-auto object-contain filter drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]" onerror="this.onerror=null; this.src='https://i.ibb.co/c5b3mb9/Luxen-Group-3.jpg';">
+            </div>
+            
+            <div class="text-center mb-20">
+                <h2 class="font-serif text-3xl md:text-4xl text-platinum tracking-[0.2em] uppercase font-light">Premium Services</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                
+                <div class="group relative h-[500px] md:h-[600px] bg-surface overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1600&auto=format&fit=crop" alt="Luxury Residence" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[1.5s] ease-out group-hover:scale-105 group-hover:opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-3xl mb-3">Private Residences</h3>
+                        <p class="text-sm text-platinum font-light leading-relaxed opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                            Architectural masterpieces situated in world-renowned enclaves, curated strictly for absolute privacy, elite security, and refined living.
+                        </p>
+                        <div class="mt-6 border-t border-white/20 pt-4 w-12 transition-all duration-500 group-hover:w-full"></div>
+                    </div>
+                </div>
+
+                <div class="group relative h-[500px] md:h-[600px] bg-surface overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop" alt="Luxury Villa" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[1.5s] ease-out group-hover:scale-105 group-hover:opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-3xl mb-3">Sanctuary Estates</h3>
+                        <p class="text-sm text-platinum font-light leading-relaxed opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                            Expansive countryside and coastal sanctuaries featuring dedicated domestic staff, private chefs, and breathtaking natural seclusion.
+                        </p>
+                        <div class="mt-6 border-t border-white/20 pt-4 w-12 transition-all duration-500 group-hover:w-full"></div>
+                    </div>
+                </div>
+
+                <div class="group relative h-[500px] md:h-[600px] bg-surface overflow-hidden cursor-pointer">
+                    <img src="https://i.ibb.co/FL7cKLkP/953195f8-9b00-44d8-92c9-f934d67bb26d.jpg" alt="Private Jet" class="absolute inset-0 w-full h-full object-cover object-center scale-90 transition-transform duration-[1.5s] ease-out group-hover:scale-95 group-hover:opacity-90 opacity-70">
+                   <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-3xl mb-3">Private Aviation</h3>
+                        <p class="text-sm text-platinum font-light leading-relaxed opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                            On-demand intercontinental charter flights. Experience seamless departures through private fixed-base operators with uncompromised flight schedules.
+                        </p>
+                        <div class="mt-6 border-t border-white/20 pt-4 w-12 transition-all duration-500 group-hover:w-full"></div>
+                    </div>
+                </div>
+
+                <div class="group relative h-[500px] md:h-[600px] bg-surface overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=1600&auto=format&fit=crop" alt="Yacht" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[1.5s] ease-out group-hover:scale-105 group-hover:opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-3xl mb-3">Superyachts & Charters</h3>
+                        <p class="text-sm text-platinum font-light leading-relaxed opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                            Magnificent maritime vessels outfitted with full professional crews, bespoke culinary programs, and custom coastal itineraries.
+                        </p>
+                        <div class="mt-6 border-t border-white/20 pt-4 w-12 transition-all duration-500 group-hover:w-full"></div>
+                    </div>
+                </div>
+
+                <div class="group relative h-[500px] md:h-[600px] bg-surface overflow-hidden cursor-pointer">
+                    <img src="https://i.ibb.co/jksh7JbT/1e7e9ea0-a037-48c7-a6e5-8ec16bc2793b.jpg" alt="Armored Logistics Vehicle" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-[1.5s] ease-out group-hover:scale-105 group-hover:opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-3xl mb-3">Armored Logistics</h3>
+                        <p class="text-sm text-platinum font-light leading-relaxed opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                            State-of-the-art armored and luxury executive fleets piloted by certified bilingual security chauffeurs for absolute road discretion.
+                        </p>
+                        <div class="mt-6 border-t border-white/20 pt-4 w-12 transition-all duration-500 group-hover:w-full"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="paises" class="py-24 bg-surface border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <h2 class="font-serif text-3xl md:text-4xl text-center mb-16 font-light">Countries where we operate</h2>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                
+                <div class="group relative h-[300px] md:h-[400px] bg-black overflow-hidden border border-white/5">
+                    <img src="https://flagcdn.com/w1280/co.jpg" alt="Colombia Flag" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale-[50%] transition-all duration-[1.5s] ease-out group-hover:scale-110 group-hover:opacity-70 group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end items-center text-center">
+                        <h3 class="font-serif text-xl md:text-2xl tracking-wide mb-2 text-white">Colombia</h3>
+                        <div class="border-t border-white/20 pt-2 w-8 transition-all duration-500 group-hover:w-20 group-hover:border-white"></div>
+                    </div>
+                </div>
+
+                <div class="group relative h-[300px] md:h-[400px] bg-black overflow-hidden border border-white/5">
+                    <img src="https://flagcdn.com/w1280/mx.jpg" alt="Mexico Flag" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale-[50%] transition-all duration-[1.5s] ease-out group-hover:scale-110 group-hover:opacity-70 group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end items-center text-center">
+                        <h3 class="font-serif text-xl md:text-2xl tracking-wide mb-2 text-white">Mexico</h3>
+                        <div class="border-t border-white/20 pt-2 w-8 transition-all duration-500 group-hover:w-20 group-hover:border-white"></div>
+                    </div>
+                </div>
+
+                <div class="group relative h-[300px] md:h-[400px] bg-black overflow-hidden border border-white/5">
+                    <img src="https://flagcdn.com/w1280/us.jpg" alt="United States Flag" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale-[50%] transition-all duration-[1.5s] ease-out group-hover:scale-110 group-hover:opacity-70 group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end items-center text-center">
+                        <h3 class="font-serif text-xl md:text-2xl tracking-wide mb-2 text-white">United States</h3>
+                        <div class="border-t border-white/20 pt-2 w-8 transition-all duration-500 group-hover:w-20 group-hover:border-white"></div>
+                    </div>
+                </div>
+
+                <div class="group relative h-[300px] md:h-[400px] bg-black overflow-hidden border border-white/5">
+                    <img src="https://flagcdn.com/w1280/eu.png" alt="European Union Flag" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale-[50%] transition-all duration-[1.5s] ease-out group-hover:scale-110 group-hover:opacity-70 group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end items-center text-center">
+                        <h3 class="font-serif text-xl md:text-2xl tracking-wide mb-2 text-white">European Union</h3>
+                        <div class="border-t border-white/20 pt-2 w-8 transition-all duration-500 group-hover:w-20 group-hover:border-white"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="filosofia" class="py-24 px-6 md:px-8 bg-black border-t border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+                
+                <div class="relative group">
+                    <div class="w-12 border-t border-white/30 mb-8 transition-all duration-700 group-hover:w-24 group-hover:border-white"></div>
+                    <h2 class="font-serif text-3xl md:text-4xl mb-6 text-white tracking-wide font-light">Our Mission</h2>
+                    <p class="text-platinum text-sm md:text-base leading-relaxed tracking-wide font-light opacity-80 text-justify">
+                        To curate transcendent, ultra-personalized travel experiences for global icons, executives, and discerning clientele—delivering peerless sanctuaries, elite mobility, and flawless logistical architecture underpinned by absolute confidentiality.
+                    </p>
+                </div>
+
+                <div class="relative group">
+                    <div class="w-12 border-t border-white/30 mb-8 transition-all duration-700 group-hover:w-24 group-hover:border-white"></div>
+                    <h2 class="font-serif text-3xl md:text-4xl mb-6 text-white tracking-wide font-light">Our Vision</h2>
+                    <p class="text-platinum text-sm md:text-base leading-relaxed tracking-wide font-light opacity-80 text-justify">
+                        To stand as the definitive international benchmark for luxury concierge services within the entertainment and elite private sectors, recognized globally for unyielding standards, profound discretion, and flawless execution.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="garantia" class="py-32 px-4 md:px-8 bg-black">
+        <div class="max-w-6xl mx-auto border border-white/10 p-10 md:p-24 bg-surface/30 relative">
+            
+            <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-white/30"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/30"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/30"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-white/30"></div>
+
+            <div class="text-center max-w-4xl mx-auto">
+                <svg class="w-8 h-8 mx-auto mb-8 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+                
+                <h2 class="font-serif text-2xl md:text-4xl leading-relaxed mb-16 font-light">
+                    "True exclusivity demands <i class="text-white/70">human intuition, emotional intelligence, and absolute adaptability</i>. Algorithms cannot comprehend luxury. Behind every request is a master concierge dedicated entirely to turning the impossible into reality."
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 border-t border-white/10 pt-16">
+                <div class="text-center">
+                    <svg class="w-6 h-6 mx-auto mb-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <h4 class="font-serif text-xl mb-3 tracking-wide">Absolute Discretion</h4>
+                    <p class="text-xs text-platinum font-light leading-relaxed">Protected under strict non-disclosure legal frameworks. Your complete privacy remains our paramount asset.</p>
+                </div>
+                
+                <div class="text-center">
+                    <svg class="w-6 h-6 mx-auto mb-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h4 class="font-serif text-xl mb-3 tracking-wide">Instantaneous Access</h4>
+                    <p class="text-xs text-platinum font-light leading-relaxed">Direct WhatsApp and VIP line connection. A dedicated senior specialist answers and coordinates your needs instantly.</p>
+                </div>
+
+                <div class="text-center">
+                    <svg class="w-6 h-6 mx-auto mb-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                    <h4 class="font-serif text-xl mb-3 tracking-wide">Bespoke Itineraries</h4>
+                    <p class="text-xs text-platinum font-light leading-relaxed">Never bound by templates. Every single journey is custom-architected from scratch to mirror your precise lifestyle.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="chat-general-btn inline-block border-b border-white pb-1 text-xs tracking-[0.2em] uppercase hover:text-white/60 transition-colors">
+                    Request private membership
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-white/10 pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center px-6">
+            
+            <!-- Footer Logo Image (Increased by 200% - h-24 md:h-32) -->
+            <div class="mb-8 flex justify-center">
+                <img src="https://i.ibb.co/c5b3mb9/Luxen-Group-3.jpg" alt="Luxensgroup LX Logo" class="h-24 md:h-32 w-auto object-contain" onerror="this.onerror=null; this.src='https://i.ibb.co/c5b3mb9/Luxen-Group-3.jpg';">
+            </div>
+            
+            <p class="text-platinum text-xs font-light max-w-md mx-auto mb-12 leading-relaxed tracking-wider">
+                Ultra-Luxury Private Concierge & Lifestyle Management. Retained exclusively for a distinguished clientele.
+            </p>
+
+            <div class="flex justify-center mb-16">
+                <a href="#" class="chat-general-btn group text-xs tracking-[0.15em] uppercase text-white border border-white/20 py-3 px-8 rounded-full transition-all duration-500 hover:bg-white hover:text-black hover:border-white hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]">WhatsApp VIP Line</a>
+            </div>
+
+            <div class="w-full border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/40 tracking-widest uppercase">
+                <p>&copy; 2026 Luxensgroup LX. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#garantia" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#paises" class="hover:text-white transition-colors">Destinations</a>
+                    <a href="#filosofia" class="hover:text-white transition-colors">Philosophy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle('open');
+            menuIcon.style.transform = isOpen ? 'rotate(90deg)' : 'rotate(0deg)';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                menuIcon.style.transform = 'rotate(0deg)';
+            });
+        });
+
+        const WHATSAPP_NUMBER = "573043339484"; 
+        
+        const generalChatBtns = document.querySelectorAll('.chat-general-btn');
+        generalChatBtns.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const customMessage = "Hola, me gustaría recibir más información sobre los servicios de Luxensgroup LX";
+                const encodedMessage = encodeURIComponent(customMessage);
+                const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+
+        const serviceCards = document.querySelectorAll('#servicios .group');
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const serviceTitleElement = card.querySelector('h3');
+                if (serviceTitleElement) {
+                    const serviceName = serviceTitleElement.innerText.trim();
+                    const customMessage = `Hola, necesito asistencia con ${serviceName}`;
+                    const encodedMessage = encodeURIComponent(customMessage);
+                    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+                    window.open(whatsappUrl, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
